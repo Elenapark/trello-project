@@ -9,10 +9,7 @@ export default function OrganizationIdLayout({
   return (
     <div>
       <OrgControl />
-      <div>
-        this is Organization **Id** Layout
-        {children}
-      </div>
+      <div>{children}</div>
     </div>
   );
 }
