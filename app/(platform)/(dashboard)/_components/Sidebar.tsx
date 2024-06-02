@@ -1,14 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
 import { useOrganization, useOrganizationList } from "@clerk/nextjs";
 import { useLocalStorage } from "usehooks-ts";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Accordion } from "@/components/ui/accordion";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
@@ -63,7 +57,22 @@ export const Sidebar = ({
     !isActiveOrganizationLoaded ||
     userMemberships.isLoading
   )
-    return <Skeleton />;
+    return (
+      // Skeleton
+      <>
+        <div className="flex items-center justify-between mb-2">
+          {/* replicationg workspaces */}
+          <Skeleton className="h-10 w-[50%]" />
+          <Skeleton className="h-10 w-10" />
+        </div>
+        {/* replicating organization list */}
+        <div className="space-y-2">
+          <NavItem.Skeleton />
+          <NavItem.Skeleton />
+          <NavItem.Skeleton />
+        </div>
+      </>
+    );
 
   return (
     <>
