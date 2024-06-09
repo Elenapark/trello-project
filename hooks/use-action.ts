@@ -32,9 +32,7 @@ export const useAction = <TInput, TOutput>(
         if (!res) return;
 
         // validation error
-        if (res.fieldErrors) {
-          setFieldErrors(res.fieldErrors);
-        }
+        setFieldErrors(res.fieldErrors);
 
         // server error
         if (res.error) {
