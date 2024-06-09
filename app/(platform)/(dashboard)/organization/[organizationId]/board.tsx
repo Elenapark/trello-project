@@ -1,6 +1,6 @@
 import { deleteBoard } from "@/actions/deleteBoard";
+import { FormSubmit } from "@/components/form/form-submit";
 import { Button } from "@/components/ui/button";
-import { FormButton } from "./form-button";
 
 interface BoardProps {
   title: string;
@@ -15,7 +15,8 @@ export const Board = ({ title, id }: BoardProps) => {
       className="border border-gray-300 rounded-sm p-2 flex items-center justify-between"
     >
       <p>Board title: {title}</p>
-      <FormButton variant="destructive">Delete</FormButton>
+      {/* <FormSubmit variant="destructive">Delete</FormSubmit> */}
+      <Button>Delete</Button>
     </form>
   );
 };
