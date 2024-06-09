@@ -7,7 +7,7 @@ interface FormSubmitProps {
   children: React.ReactNode;
   disabled?: boolean;
   className?: string;
-  variant:
+  variant?:
     | "default"
     | "destructive"
     | "outline"
