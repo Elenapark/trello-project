@@ -25,6 +25,43 @@ model Board {
   imageUserName String
   imageLinkHTML String
 
+  lists List[]
+
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+}
+
+model List  {
+id String @id @default(uuid())
+title String
+order Int
+
+boardId String
+// created the relation using the boardId field referencing to the id field in the Board model
+// when we delete a Board, this List also gets deleted  (cascading)
+board Board @relation(fields: [boardId], references: [id], onDelete: Cascade) 
+
+cards Card[]
+
+createdAt DateTime @default(now())
+updatedAt DateTime @updatedAt
+
+@@index([boardId])
+}
+
+
+model Card {
+id String @id @default(uuid())
+title String
+order Int
+description String? @db.Text
+
+listId String
+// create the relation using listId field referencing to the id field in the List model 
+// when we delete a List, this Card also gets deleted (cascading)
+list List @relation(fields:[listId], references: [id], onDelete: Cascade)
+
+createdAt DateTime @default(now())
+updatedAt DateTime @updatedAt
+@@index([listId])
 }
