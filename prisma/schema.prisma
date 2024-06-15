@@ -34,9 +34,12 @@ model Board {
 model List  {
 id String @id @default(uuid())
 title String
+
+// order - how it's going to be ordered in the user's screen (first, between, last, etc.)
 order Int
 
 boardId String
+
 // created the relation using the boardId field referencing to the id field in the Board model
 // when we delete a Board, this List also gets deleted  (cascading)
 board Board @relation(fields: [boardId], references: [id], onDelete: Cascade) 
@@ -53,10 +56,14 @@ updatedAt DateTime @updatedAt
 model Card {
 id String @id @default(uuid())
 title String
+
+// order - what's going to be modified every time we drag and drop the card or the list itself
+// (drop to another list, top, bottom) bit more complicated 
 order Int
 description String? @db.Text
 
 listId String
+
 // create the relation using listId field referencing to the id field in the List model 
 // when we delete a List, this Card also gets deleted (cascading)
 list List @relation(fields:[listId], references: [id], onDelete: Cascade)
