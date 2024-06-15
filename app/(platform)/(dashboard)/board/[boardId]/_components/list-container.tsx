@@ -24,7 +24,9 @@ export const ListContainer = ({ boardId, data }: ListContainerProps) => {
         <ListItem key={list.id} index={idx} data={list} />
       ))}
 
+      {/*  Add a new list form at the end of the list */}
       <ListForm />
+
       {/* empty space at the end of x-axis - create little bit of padding */}
       <div className="flex-shrink-0 w-1" />
     </ol>
