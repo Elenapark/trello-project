@@ -90,6 +90,7 @@ id String @id @default(uuid())
 orgId String
 action ACTION
 entityId String
+entityTitle String
 entityType ENTITY_TYPE
 userId String
 userImage String @db.Text
