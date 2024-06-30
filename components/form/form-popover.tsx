@@ -11,7 +11,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useAction } from "@/hooks/use-action";
-import { createBoard } from "@/actions/create-board";
+import { createBoard } from "@/actions/board/create-board";
 
 import { FormInput } from "./form-input";
 import { FormSubmit } from "./form-submit";

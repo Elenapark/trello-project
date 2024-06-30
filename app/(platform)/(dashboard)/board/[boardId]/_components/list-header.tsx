@@ -3,7 +3,7 @@ import { ElementRef, useRef, useState } from "react";
 import { toast } from "sonner";
 import { useEventListener } from "usehooks-ts";
 
-import { updateList } from "@/actions/update-list";
+import { updateList } from "@/actions/list/update-list";
 import { FormInput } from "@/components/form/form-input";
 import { useAction } from "@/hooks/use-action";
 import { ListWithCards } from "@/types";

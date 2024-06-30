@@ -8,7 +8,7 @@ import { FormInput } from "@/components/form/form-input";
 import { CardWithList } from "@/types";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useAction } from "@/hooks/use-action";
-import { updateCard } from "@/actions/update-card";
+import { updateCard } from "@/actions/card/update-card";
 import { toast } from "sonner";
 
 interface HeaderProps {

@@ -10,7 +10,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/popover";
 import { useAction } from "@/hooks/use-action";
-import { deleteBoard } from "@/actions/delete-board";
+import { deleteBoard } from "@/actions/board/delete-board";
 import { toast } from "sonner";
 
 interface BoardOptionsProps {

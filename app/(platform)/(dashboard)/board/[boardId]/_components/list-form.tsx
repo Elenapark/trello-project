@@ -9,7 +9,7 @@ import { ListWrapper } from "./list-wrapper";
 import { FormInput } from "@/components/form/form-input";
 import { FormSubmit } from "@/components/form/form-submit";
 import { useAction } from "@/hooks/use-action";
-import { createList } from "@/actions/create-list";
+import { createList } from "@/actions/list/create-list";
 import { toast } from "sonner";
 
 export const ListForm = () => {

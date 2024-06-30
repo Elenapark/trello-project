@@ -10,7 +10,7 @@ import { FormTextarea } from "@/components/form/form-textarea";
 import { FormSubmit } from "@/components/form/form-submit";
 import { Button } from "@/components/ui/button";
 import { useAction } from "@/hooks/use-action";
-import { updateCard } from "@/actions/update-card";
+import { updateCard } from "@/actions/card/update-card";
 import { toast } from "sonner";
 
 interface DescriptionProps {

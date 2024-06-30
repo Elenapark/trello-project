@@ -7,9 +7,9 @@ import { useAction } from "@/hooks/use-action";
 import { ListWithCards } from "@/types";
 import { ListForm } from "./list-form";
 import { ListItem } from "./list-item";
-import { updateListOrder } from "@/actions/update-list-order";
+import { updateListOrder } from "@/actions/list/update-list-order";
 import { toast } from "sonner";
-import { updateCardOrder } from "@/actions/update-card-order";
+import { updateCardOrder } from "@/actions/card/update-card-order";
 
 interface ListContainerProps {
   boardId: string;

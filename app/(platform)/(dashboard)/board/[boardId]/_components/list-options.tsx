@@ -13,9 +13,9 @@ import {
 import { ListWithCards } from "@/types";
 import { FormSubmit } from "@/components/form/form-submit";
 import { Separator } from "@/components/ui/separator";
-import { deleteList } from "@/actions/delete-list";
+import { deleteList } from "@/actions/list/delete-list";
 import { useAction } from "@/hooks/use-action";
-import { copyList } from "@/actions/copy-list";
+import { copyList } from "@/actions/list/copy-list";
 
 interface ListOptionsProps {
   data: ListWithCards;

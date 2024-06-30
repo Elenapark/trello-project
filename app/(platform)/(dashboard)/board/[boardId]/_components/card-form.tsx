@@ -11,7 +11,7 @@ import { FormSubmit } from "@/components/form/form-submit";
 import { FormTextarea } from "@/components/form/form-textarea";
 import { Button } from "@/components/ui/button";
 import { useAction } from "@/hooks/use-action";
-import { createCard } from "@/actions/create-card";
+import { createCard } from "@/actions/card/create-card";
 import { toast } from "sonner";
 import { useEventListener, useOnClickOutside } from "usehooks-ts";
 import { useParams } from "next/navigation";
