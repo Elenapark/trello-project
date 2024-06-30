@@ -9,6 +9,7 @@ import { createSafeAction } from "@/lib/create-safe-action";
 import { DeleteBoard } from "./schema";
 import { redirect } from "next/navigation";
 import { createAuditLog } from "@/lib/create-audit-log";
+import { decreaseAvailableBoards } from "@/lib/org-limit";
 
 const handler = async (data: InputType): Promise<ReturnType> => {
   const { userId, orgId } = auth();
@@ -28,6 +29,8 @@ const handler = async (data: InputType): Promise<ReturnType> => {
         orgId, // for security
       },
     });
+
+    await decreaseAvailableBoards();
 
     await createAuditLog({
       entityId: board.id,

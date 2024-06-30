@@ -6,6 +6,8 @@ import { Hint } from "@/components/hint";
 import { HelpCircle, User2 } from "lucide-react";
 import { db } from "@/lib/db";
 import { Skeleton } from "@/components/ui/skeleton";
+import { getAvailableCount } from "@/lib/org-limit";
+import { MAX_FREE_BOARDS } from "@/constants/board";
 
 export const BoardList = async () => {
   const { orgId } = auth();
@@ -22,6 +24,9 @@ export const BoardList = async () => {
       createdAt: "desc",
     },
   });
+
+  const availableBoardCount = await getAvailableCount();
+
   return (
     <div className="space-y-4">
       <div className="flex items-center font-semibold text-lg text-neutral-700">
@@ -50,7 +55,9 @@ export const BoardList = async () => {
             className="aspect-video relative h-full w-full bg-muted rounded-sm p-2 flex flex-col gap-y-1 items-center justify-center hover:opacity-75 transition"
           >
             <p className="text-sm">Create new board</p>
-            <span className="text-xs">5 remaining</span>
+            <span className="text-xs">
+              {`${MAX_FREE_BOARDS - availableBoardCount} remaining`}
+            </span>
             <Hint
               sideOffset={30}
               description={`
