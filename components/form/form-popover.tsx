@@ -18,6 +18,7 @@ import { FormSubmit } from "./form-submit";
 import { PopoverClose } from "@radix-ui/react-popover";
 import { Button } from "@/components/ui/button";
 import { FormPickers } from "./form-pickers";
+import usePromotionModal from "@/hooks/use-promotion-modal";
 
 interface FormPopoverProps {
   children: React.ReactNode;
@@ -34,6 +35,7 @@ export const FormPopover = ({
 }: FormPopoverProps) => {
   const router = useRouter();
   const closeRef = useRef<ElementRef<"button">>(null);
+  const promotionModal = usePromotionModal();
 
   const [isClient, setIsClient] = useState(false);
   const { execute, fieldErrors } = useAction(createBoard, {
@@ -46,6 +48,7 @@ export const FormPopover = ({
     onError: (err) => {
       console.log("Board creation failed", err);
       toast.error(err);
+      promotionModal.onOpen();
     },
   });
 

@@ -2,13 +2,13 @@ import { create } from "zustand";
 
 type PromitionModalStore = {
   isOpen: boolean;
-  onOpen: (id: string) => void;
+  onOpen: () => void;
   onClose: () => void;
 };
 
 const usePromotionModal = create<PromitionModalStore>((set) => ({
   isOpen: false,
-  onOpen: (id: string) => set({ isOpen: true }),
+  onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }));
 
