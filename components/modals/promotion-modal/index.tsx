@@ -4,9 +4,25 @@ import Image from "next/image";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import usePromotionModal from "@/hooks/use-promotion-modal";
 import { Button } from "@/components/ui/button";
+import { useAction } from "@/hooks/use-action";
+import { stripeRedirect } from "@/actions/stripe-redirect";
+import { toast } from "sonner";
 
 export const PromotionModal = () => {
   const promotionModal = usePromotionModal();
+
+  const { execute, isLoading } = useAction(stripeRedirect, {
+    onSuccess: (data) => {
+      window.location.href = data;
+    },
+    onError: (err) => {
+      toast.error(err);
+    },
+  });
+
+  const onClick = () => {
+    execute({});
+  };
   return (
     <Dialog open={promotionModal.isOpen} onOpenChange={promotionModal.onClose}>
       <DialogContent className="max-w-md p-0 overflow-hidden">
@@ -33,7 +49,12 @@ export const PromotionModal = () => {
               <li>And more!</li>
             </ul>
           </div>
-          <Button className="w-full" variant="primary">
+          <Button
+            className="w-full"
+            variant="primary"
+            disabled={isLoading}
+            onClick={onClick}
+          >
             Upgrade
           </Button>
         </div>
