@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { text } from "stream/consumers";
 
 const headingFont = localFont({
-  src: "../../public/fonts/CalSans-Semibold.woff2",
+  src: "../../public/fonts/CalSans-SemiBold.woff2",
 });
 
 const textFont = Poppins({

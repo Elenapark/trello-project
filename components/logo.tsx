@@ -5,7 +5,7 @@ import localFont from "next/font/local";
 import { cn } from "@/lib/utils";
 
 const headingFont = localFont({
-  src: "../public/fonts/CalSans-Semibold.woff2",
+  src: "../public/fonts/CalSans-SemiBold.woff2",
 });
 
 export const Logo = () => {
