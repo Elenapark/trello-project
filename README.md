@@ -57,13 +57,5 @@
   - 카드 drag & drop 기능
   - 카드 copy 기능
 
-
-
-### 프로젝트 실행 방법
-```js
-yarn install
-yarn dev
-```
-
 ### 배포 URL
 - https://trello-project-rust.vercel.app/
